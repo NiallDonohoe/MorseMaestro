@@ -1,13 +1,16 @@
 package Alphabet;
 import  java.io.*;
-import java.net.URL;
 import javax.sound.sampled.*;
 import javax.swing.JOptionPane;
 
-public abstract class Letter {
+public class Letter {
 	
-	protected static String character;
+	protected char character;
 	private static String fileLocation = "C:\\Users\\Niall\\Desktop\\CS\\Projects\\MorseMaestro\\Audio files\\" + "MORSE" + ".wav";
+	
+	public Letter(char character) {
+		this.character = character;
+	}
 	
 	public void printCharacter() {
 		System.out.println("This is letter: " + character);
@@ -17,8 +20,11 @@ public abstract class Letter {
 		// to be implemented with voice recordings
 	};
 	
-	public static void playCharacter() {
-		System.out.println(fileLocation);
+	public char getCharacter() {
+		return this.character;
+	}
+	
+	public void playCharacter() {
 		try {
 			File audioPath = new File(fileLocation);
 			
@@ -29,10 +35,10 @@ public abstract class Letter {
 				clip.open(audio);
 				clip.start();
 				long clipTimePosition = clip.getMicrosecondPosition();
-				JOptionPane.showMessageDialog(null,"Press ok to Pause");
+				JOptionPane.showMessageDialog(null,"Press ok to pause");
 				clip.stop();
 				
-				JOptionPane.showMessageDialog(null,"Press ok to Play");
+				JOptionPane.showMessageDialog(null,"Press ok to resume");
 				clip.setMicrosecondPosition(clipTimePosition);
 				clip.start();
 				
