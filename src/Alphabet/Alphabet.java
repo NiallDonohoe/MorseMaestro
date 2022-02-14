@@ -11,7 +11,7 @@ public class Alphabet {
 	private static ArrayList<Letter> randomCharacterSequence = new ArrayList<Letter>();
 	
 	public static void createAlphabet() {
-		for(int asciiValue = 65; asciiValue<=90; asciiValue++) {
+		for(int asciiValue = 97; asciiValue<=122; asciiValue++) {
 			alphabet.add(new Letter((char)asciiValue));
 		}
 	}

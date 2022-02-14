@@ -6,10 +6,11 @@ import javax.swing.JOptionPane;
 public class Letter {
 	
 	protected char character;
-	private static String fileLocation = "C:\\Users\\Niall\\Desktop\\CS\\Projects\\MorseMaestro\\Audio files\\" + "MORSE" + ".wav";
+	private String fileLocation;
 	
 	public Letter(char character) {
 		this.character = character;
+		this.fileLocation = "C:\\Users\\Niall\\Desktop\\CS\\Projects\\MorseMaestro\\Audio files\\"+ String.valueOf(character)+ ".wav";
 	}
 	
 	public void printCharacter() {
@@ -34,13 +35,13 @@ public class Letter {
 				Clip clip = AudioSystem.getClip();
 				clip.open(audio);
 				clip.start();
-				long clipTimePosition = clip.getMicrosecondPosition();
-				JOptionPane.showMessageDialog(null,"Press ok to pause");
-				clip.stop();
-				
-				JOptionPane.showMessageDialog(null,"Press ok to resume");
-				clip.setMicrosecondPosition(clipTimePosition);
-				clip.start();
+//				long clipTimePosition = clip.getMicrosecondPosition();
+//				JOptionPane.showMessageDialog(null,"Press ok to pause");
+//				clip.stop();
+//				
+//				JOptionPane.showMessageDialog(null,"Press ok to resume");
+//				clip.setMicrosecondPosition(clipTimePosition);
+//				clip.start();
 				
 			}
 			else {
